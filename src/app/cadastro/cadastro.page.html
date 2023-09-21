@@ -22,7 +22,12 @@
     </ion-item>
     <ion-item>
       <ion-label>Data e Hora</ion-label>
-      <ion-input></ion-input>
+      
+      <ion-datetime 
+        [showDefaultButtons]="true" 
+        [(ngModel)]="datahora"
+      ></ion-datetime>
+
     </ion-item>
   </ion-list>
   <ion-button expand="full" (click)="salvar()">Salvar</ion-button>

@@ -4,11 +4,16 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class LocalStorageService {
-
+  public dados$:Array<any> = [];
   constructor() { }
 
-  salvar(entidade:string,dados:any) {
-    localStorage.setItem(entidade,JSON.stringify(dados));
+  post(entidade:string,dados:any) {
+    //this.dados$ = this.get(entidade);
+    this.dados$.push(dados);
+    localStorage.setItem(entidade,JSON.stringify(this.dados$));
   }
 
+  get(entidade:string){
+    return JSON.parse(String(localStorage.getItem(entidade)));
+  }
 }
