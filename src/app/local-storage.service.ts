@@ -8,7 +8,7 @@ export class LocalStorageService {
   constructor() { }
 
   post(entidade:string,dados:any) {
-    //this.dados$ = this.get(entidade);
+    this.dados$ = this.get(entidade);
     this.dados$.push(dados);
     localStorage.setItem(entidade,JSON.stringify(this.dados$));
   }

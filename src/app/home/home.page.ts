@@ -11,6 +11,10 @@ export class HomePage {
   constructor(
     public localstorage_service:LocalStorageService
   ) {
+  
+  }
+
+  ionViewWillEnter(){
     this.compromissos = this.localstorage_service.get('compromisso');
   }
 
