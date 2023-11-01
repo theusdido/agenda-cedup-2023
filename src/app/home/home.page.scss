@@ -25,3 +25,8 @@
 #container a {
   text-decoration: none;
 }
+
+.lista-compromissos{
+  display: flex;
+  flex-direction: column-reverse;
+}

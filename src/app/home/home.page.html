@@ -19,27 +19,36 @@
     </ion-toolbar>
   </ion-header>
 
+  <div class="lista-compromissos">
+    <ion-card *ngFor="let compromisso of compromissos;let i = index;">
 
-  <ion-card *ngFor="let compromisso of compromissos;let i = index;">
-    <ion-card-header>
-      <ion-card-title>{{ compromisso.materia }}</ion-card-title>
-      <ion-card-subtitle>{{ compromisso.descricao }}</ion-card-subtitle>
-    </ion-card-header>
-  
-    <ion-card-content>
-      <ion-item>
-        <ion-icon name="alarm"></ion-icon>
-        <ion-input label="" placeholder="{{ getHora(compromisso.datahora) }}"></ion-input>
-      </ion-item>
+      <ion-card-header>
+        <ion-card-title>{{ compromisso.materia }}</ion-card-title>
+        <ion-card-subtitle>{{ compromisso.descricao }}</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <ion-item>
+          <ion-icon name="alarm"></ion-icon>
+          <ion-input label="" placeholder="{{ getHora(compromisso.datahora) }}"></ion-input>
+        </ion-item>
 
-      <ion-item>
-        <ion-icon name="calendar"></ion-icon>
-        <ion-input label="" placeholder="{{ getData(compromisso.datahora) }}"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-button expand="full" (click)="excluir(i)">Encerrado</ion-button>
-      </ion-item>
-    </ion-card-content>
+        <ion-item>
+          <ion-icon name="calendar"></ion-icon>
+          <ion-input label="" placeholder="{{ getData(compromisso.datahora) }}"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-button 
+            expand="clear" 
+            color="danger"
+            (click)="excluir(i)" 
+            slot="end"
+          >
+            <ion-icon name="trash"></ion-icon>
+          </ion-button>
+        </ion-item>
+      </ion-card-content>
 
-  </ion-card>
+    </ion-card>
+  </div>
 </ion-content>
